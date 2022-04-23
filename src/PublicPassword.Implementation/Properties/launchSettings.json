@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "PublicPassword.Impl": {
+    "PublicPassword.Implementation": {
       "commandName": "Project",
       "commandLineArgs": "encrypt"
     }

@@ -1,6 +1,6 @@
 ﻿using CommandLine;
 
-namespace PublicPassword.Impl
+namespace PublicPassword.Implementation
 {
     internal class CommandLineOptions
     {

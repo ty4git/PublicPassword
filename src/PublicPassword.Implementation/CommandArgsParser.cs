@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace PublicPassword.Impl
+namespace PublicPassword.Implementation
 {
     internal class CommandArgsParser
     {
@@ -20,7 +20,7 @@ namespace PublicPassword.Impl
 
             throw new Exception(
                 "There is no command or it's incorrect command." +
-                @$" Should be ""{encryptCommandName}"" or ""{decryptCommandName}""");
+                @$" Should be either ""{encryptCommandName}"" or ""{decryptCommandName}""");
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using System.Linq;
 
-namespace PublicPassword.Impl
+namespace PublicPassword.Implementation
 {
     public abstract class Passworder
     {
@@ -100,9 +100,9 @@ namespace PublicPassword.Impl
             var inputFilePath = GetParamValue(names.InputFile);
 
             var inputFile = new FileInfo(inputFilePath);
-            if (!new[] { ".png", ".txt", string.Empty }.Contains(inputFile.Extension))
+            if (!new[] { ".png", string.Empty }.Contains(inputFile.Extension))
             {
-                throw new Exception(@"""input-file"" param can have extensions "".png, .txt"" only.");
+                throw new Exception(@"""input-file"" param can have extensions "".png only.");
             }
 
             return (password, inputFile);

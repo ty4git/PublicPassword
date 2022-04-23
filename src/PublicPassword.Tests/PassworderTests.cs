@@ -1,5 +1,5 @@
 using Microsoft.Extensions.Configuration;
-using PublicPassword.Impl;
+using PublicPassword.Implementation;
 using Xunit;
 
 namespace PublicPassword.Tests

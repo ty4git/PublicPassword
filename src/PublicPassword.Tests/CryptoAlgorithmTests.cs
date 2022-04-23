@@ -1,7 +1,7 @@
-﻿using System;
+﻿using PublicPassword.Implementation;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
-using PublicPassword.Impl;
 using Xunit;
 
 namespace PublicPassword.Tests

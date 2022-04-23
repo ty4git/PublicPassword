@@ -3,14 +3,18 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using ZXing;
+using ZXing.Common;
 
-namespace PublicPassword.Impl
+namespace PublicPassword.Implementation
 {
     internal static class QrCoder
     {
         public static Bitmap CreateImage(byte[] data)
         {
-            var writer = new BarcodeWriter { Format = BarcodeFormat.QR_CODE };
+            var writer = new BarcodeWriter {
+                Format = BarcodeFormat.QR_CODE,
+                Options = new EncodingOptions { Height = 400, Width = 400 }
+            };
             var qrCode = writer.Write(Convert.ToBase64String(data));
             return qrCode;
         }
@@ -28,10 +32,6 @@ namespace PublicPassword.Impl
 
             var qrCode = new BarcodeReader().Decode(image);
             var data = Convert.FromBase64String(qrCode.Text);
-
-            //todo: logger
-            Console.WriteLine($"qr code data: {string.Join("|", data)}");
-
             return data;
         }
     }

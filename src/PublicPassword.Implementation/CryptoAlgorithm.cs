@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PublicPassword.Impl
+namespace PublicPassword.Implementation
 {
     public class CryptoAlgorithm
     {
@@ -56,10 +56,6 @@ namespace PublicPassword.Impl
                 alg.IV = passwordDerivedBytes.GetBytes(alg.BlockSize / 8);
                 alg.Mode = CipherMode.CBC;
                 alg.Padding = PaddingMode.PKCS7;
-
-                //todo: logger
-                Console.WriteLine($"{nameof(alg.Key)}: {string.Join("|", alg.Key)}");
-                Console.WriteLine($"{nameof(alg.IV)}: {string.Join("|", alg.IV)}");
             }
             catch
             {

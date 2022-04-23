@@ -1,13 +1,8 @@
-﻿using System;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Text;
+﻿using System.IO;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
-using ZXing;
 
-namespace PublicPassword.Impl
+namespace PublicPassword.Implementation
 {
     class Program
     {
