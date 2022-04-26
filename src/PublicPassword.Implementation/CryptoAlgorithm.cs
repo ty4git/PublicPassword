@@ -37,8 +37,16 @@ namespace PublicPassword.Implementation
             await using var from = new MemoryStream(encryptedData);
             await using var cryptoStream = new CryptoStream(from, decryptor, CryptoStreamMode.Read);
             using var reader = new StreamReader(cryptoStream, _textEncoding);
-            var result = await reader.ReadToEndAsync();
-            return result;
+            try
+            {
+                var result = await reader.ReadToEndAsync();
+                return result;
+            }
+            catch (CryptographicException ex)
+            {
+                throw new Exception("Some error happened during decryption of data. " +
+                                    "One of reason is you are trying to decrypt using wrong password.", ex);
+            }
         }
 
         private static SymmetricAlgorithm CreateSymmetricAlgorithm<T>(string password)
