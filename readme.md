@@ -3,11 +3,11 @@ It can be used to encrypt secret password in form of qr-code. Can be usefull if 
 
 ## Usage
 Encryption:  
-`.\PublicPassword.Implementation.exe encrypt --password 1 --text helloworld --out-file x1.png`  
+`./PublicPassword.Implementation.exe encrypt --password 1 --text helloworld --out-file x1.png`  
 The "--text" param is encrypted by "--password" and encrypted result is saved in "--out-file".
 
 Decryption:  
-`.\PublicPassword.Implementation.exe decrypt --password 1 --input-file x1.png`
+`./PublicPassword.Implementation.exe decrypt --password 1 --input-file x1.png`
 
 ## Publishing
-`dotnet publish --configuration release -runtime win-x64 -p:PublishSingleFile=true --self-contained true`
+`dotnet publish --configuration release --runtime win-x64 -p:PublishSingleFile=true --self-contained true`
