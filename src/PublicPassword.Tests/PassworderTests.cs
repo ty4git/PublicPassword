@@ -9,7 +9,9 @@ public class PassworderTests
     [Fact]
     public void CreatesEncryptor_WhenModeIsEncrypt()
     {
-        var encryptor = Builder.CreatePassworder(Mode.Encrypt, new ConfigurationManager());
+        var cfg = new ConfigurationManager();
+        cfg.AddJsonFile("appsettings.json");
+        var encryptor = Builder.CreatePassworder(Mode.Encrypt, cfg);
 
         Assert.IsAssignableFrom<IPassworder>(encryptor);
         Assert.IsType<Encryptor>(encryptor);

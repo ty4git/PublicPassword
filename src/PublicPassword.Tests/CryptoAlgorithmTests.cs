@@ -15,7 +15,6 @@ public class CryptoAlgorithmTests
     [InlineData(1000)]
     public async Task EncryptThanDecrypt_ResultsDecryptedTextIsTheSameAsSourceText(int sourceTextLength)
     {
-        var random = new Random();
         var password = "password";
         var sourceText = RandomString(sourceTextLength);
 
